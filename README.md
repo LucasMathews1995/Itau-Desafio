@@ -2,6 +2,8 @@
 Neste desafio você deve criar uma API REST no GitHub ou GitLab. Leia com atenção todas as instruções a seguir!
 
 2.1. Restrições Técnicas
+
+
 Seu projeto:
 
 DEVE estar no GitHub ou GitLab
@@ -22,14 +24,22 @@ Atenção! Por motivos de segurança, não podemos aceitar projetos enviados com
 2.2. Endpoints da API
 A seguir serão especificados os endpoints que devem estar presentes na sua API e a funcionalidade esperada de cada um deles.
 
+
+
+
+
 2.2.1. Receber Transações: POST /transacao
 Este é o endpoint que irá receber as Transações. Cada transação consiste de um valor e uma dataHora de quando ela aconteceu:
+
+
 
 {
     "valor": 123.45,
     "dataHora": "2020-08-07T12:34:56.789-03:00"
 }
 Os campos no JSON acima significam o seguinte:
+
+
 
 Campo	Significado	Obrigatório?
 valor	Valor em decimal com ponto flutuante da transação	Sim
@@ -51,6 +61,8 @@ A transação foi aceita (ou seja foi validada, está válida e foi registrada)
 A transação não foi aceita por qualquer motivo (1 ou mais dos critérios de aceite não foram atendidos - por exemplo: uma transação com valor menor que 0)
 400 Bad Request sem nenhum corpo
 A API não compreendeu a requisição do cliente (por exemplo: um JSON inválido)
+
+
 2.2.2. Limpar Transações: DELETE /transacao
 Este endpoint simplesmente apaga todos os dados de transações que estejam armazenados.
 
@@ -58,6 +70,9 @@ Como resposta, espera-se que este endpoint responda com:
 
 200 OK sem nenhum corpo
 Todas as informações foram apagadas com sucesso
+
+
+
 2.2.3. Calcular Estatísticas: GET /estatistica
 Este endpoint deve retornar estatísticas das transações que aconteceram nos últimos 60 segundos (1 minuto). As estatísticas que devem ser calculadas são:
 
@@ -83,7 +98,15 @@ Como resposta, espera-se que este endpoint responda com:
 200 OK com os dados das estatísticas
 Um JSON com os campos count, sum, avg, min e max todos preenchidos com seus respectivos valores
 Atenção! Quando não houverem transações nos últimos 60 segundos considere todos os valores como 0 (zero)
+
+
+
+
+
 4. Extras
+
+
+
 Vamos propôr a seguir alguns desafios extras caso você queira testar seus conhecimentos ao máximo! Nenhum desses requisitos é obrigatório, mas são desejados e podem ser um diferencial!
 
 Testes automatizados: Sejam unitários e/ou funcionais, testes automatizados são importantes e ajudam a evitar problemas no futuro. Se você fizer testes automatizados, atente-se na efetividade dos seus testes! Por exemplo, testar apenas os "caminhos felizes" não é muito efetivo.
